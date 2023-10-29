@@ -1,2 +1,2 @@
 # PictureExtractor
-Simple tool to move all files from sub-directories to current directory.
+Simple tool to copy all files from sub-directories to current directory.
