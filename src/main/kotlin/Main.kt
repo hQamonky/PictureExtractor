@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
     println(sourceDir.path)
     sourceDir.walk().forEach {
         println(it)
-        if (!it.isDirectory && it.extension != "jar" && it.extension != "sh") {
+        if (!it.isDirectory && it.extension != "jar" && it.extension != "sh" && it.extension != "nomedia") {
             try {
                 it.copyTo(File("${destinationDir.path}/${it.name}"))
                 it.delete()
