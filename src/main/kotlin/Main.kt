@@ -26,7 +26,9 @@ fun main(args: Array<String>) {
         println(it)
         if (!it.isDirectory && it.extension != "jar" && it.extension != "sh" && it.extension != "nomedia") {
             try {
-                it.copyTo(File("${destinationDir.path}/${it.name}"))
+                val destinationFile = File("${destinationDir.path}/${it.name}")
+                it.copyTo(destinationFile)
+                destinationFile.setLastModified(it.lastModified())
                 it.delete()
             } catch (e: Exception) {
                 e.printStackTrace()
